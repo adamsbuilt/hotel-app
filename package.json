@@ -1,0 +1,31 @@
+{
+  "name": "mean-app",
+  "version": "1.0.0",
+  "description": "MEAN stack application",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mean"
+  ],
+  "author": "adamsbuilt",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-jwt": "^0.1.9",
+    "angular-route": "^1.6.4",
+    "bcrypt-nodejs": "0.0.3",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.2",
+    "jsonwebtoken": "^7.4.1",
+    "mongodb": "^2.2.28",
+    "mongoose": "^4.10.5"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}

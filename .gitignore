@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+public/.DS_Store
+api/.DS_Store
+.DS_Store
+nodemon.json
+public/images
