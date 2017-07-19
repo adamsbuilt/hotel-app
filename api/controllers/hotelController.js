@@ -105,3 +105,34 @@ module.exports.hotelsGetAll = function (req, res) {
     });
 
 };
+
+module.exports.hotelsGetOne = function (req, res) {
+  var id = req.params.hotelId;
+
+  console.log('GET hotelId', id);
+
+  Hotel
+    .findById(id)
+    .exec(function(err, doc) {
+      var response = {
+        status : 200,
+        message : doc
+      };
+      if (err) {
+        console.log("Error finding hotel");
+        response.status = 500;
+        response.message = err;
+      } else if(!doc) {
+        console.log("Hotel ID not found in database", id);
+        response.status = 404;
+        response.message = {
+          "message" : "Hotel ID not found " + id
+        };
+      }
+      res
+        .status(response.status)
+        .json(response.message);
+    });
+
+};
+ 
