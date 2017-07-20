@@ -37,5 +37,5 @@ process.once('SIGUSR2', function() {
 });
 
 // BRING IN SCHEMAS AND MODELS
-require('./hotels_model');
-require('./users_model')
+require('./Hotel');
+require('./User')

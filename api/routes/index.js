@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const ctrlHotels = require('../controllers/hotels_controller.js');
-const ctrlReviews = require('../controllers/reviews_controller.js');
-const ctrlUsers = require('../controllers/users_controller.js')
+const ctrlHotels = require('../controllers/hotelController.js');
+const ctrlReviews = require('../controllers/reviewController.js');
+const ctrlUsers = require('../controllers/userController.js')
 
 //Hotel routes
 router
