@@ -47,3 +47,22 @@ module.exports.login = function(req, res) {
     }
   });
 };
+
+//MIDDLEWARE
+module.exports.authenticate = function(req, res, next) {
+  var headerExists = req.headers.authorization;
+  if (headerExists) {
+    var token = req.headers.authorization.split(' ')[1]; //--> Authorization Bearer xxx
+    jwt.verify(token, 's3cr3t', function(err, decoded) {
+      if (err) {
+        console.log(err);
+        res.status(401).json('UNAUTHORIZED');
+      } else {
+        req.user = decoded.username;
+        next();
+      }
+    });
+  } else{
+    res.status(403).json('No Token Provided');
+  }
+};
