@@ -1,5 +1,34 @@
 const mongoose = require('mongoose');
 
+const reviewSchema = new mongoose.Schema({
+  name : {
+    type : String,
+    required : true
+  },
+  rating : {
+    type : Number,
+    min : 0,
+    max : 5,
+    "default" : 0
+  },
+  review : {
+    type : String,
+    required : true
+  },
+  createdOn : {
+    type : Date,
+    "default" : Date.now
+  }
+});
+
+const roomSchema = new mongoose.Schema({
+  type : String,
+  number : Number,
+  description : String,
+  photos : [String],
+  price : Number
+});
+
 const hotelSchema = new mongoose.Schema({
   name : {
     type : String,
