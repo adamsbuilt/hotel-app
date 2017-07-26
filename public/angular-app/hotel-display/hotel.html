@@ -15,16 +15,14 @@
 
 <div ng-if="vm.isLoggedIn()">
   <form name="vm.reviewForm" ng-submit="vm.addReview()">
-    Your rating: <input type="text" name="rating" required ng-pattern="/^[1-5]$/" ng-model="vm.rating">
-  <div ng-show="vm.reviewForm.rating.$dirty && vm.reviewForm.rating.$invalid && vm.isSubmitted">
-    <p>Rating must be between 1-5</p>
-  </div>
-    <br>
-    Your review: <textarea name="review" required ng-model="vm.review"></textarea>
+      Your rating: <input type="text" name="rating" required ng-pattern="/^[1-5]$/" ng-model="vm.rating">
+    <div ng-show="vm.reviewForm.rating.$dirty && vm.reviewForm.rating.$invalid && vm.isSubmitted">
+      <p>Rating must be between 1-5</p>
+    </div>
+      Your review: <textarea name="review" required ng-model="vm.review"></textarea>
     <div ng-show="vm.reviewForm.review.$dirty && vm.isSubmitted">
       <p>Please add a review</p>
     </div>
-    <br>
     <button type="submit" class="btn">Add review</button>
   </form>
 </div>
